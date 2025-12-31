@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bihar Board 2026 - Vandana Classes</title>
+    <style>
+        /* TOTAL LINES: 300+ 
+           CREATOR: Vandana Classes Special 
+        */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; font-family: 'Arial Black', Gadget, sans-serif; overflow-x: hidden; color: #fff; }
+
+        /* --- 1. FRONT GIFT SCREEN --- */
+        #gift-page {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, #ff0000 0%, #200000 100%);
+            display: flex; flex-direction: column; justify-content: center;
+            align-items: center; z-index: 10000; cursor: pointer;
+        }
+        .gift-box-animate {
+            font-size: 130px; animation: bounceGift 1.2s infinite ease-in-out;
+            filter: drop-shadow(0 0 30px #ffea00);
+        }
+        .touch-text {
+            margin-top: 30px; font-size: 28px; color: gold; font-weight: 900;
+            text-transform: uppercase; animation: blinker 0.6s infinite;
+            text-shadow: 2px 2px 10px #000;
+        }
+
+        /* --- 2. MAIN FESTIVE PAGE --- */
+        #main-page { display: none; text-align: center; min-height: 100vh; position: relative; padding-bottom: 160px; }
+        
+        /* CANVAS FIREWORKS */
+        #canvas-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+
+        /* LOGO DESIGN */
+        .logo-box { margin-top: 25px; perspective: 1000px; }
+        .main-logo {
+            width: 120px; height: 120px; border-radius: 50%;
+            border: 5px solid gold; box-shadow: 0 0 30px gold;
+            animation: spinLogo 6s linear infinite; background: white;
+        }
+
+        /* SENDER NAME SECTION */
+        .from-section { margin: 20px 0; }
+        .lbl { font-size: 16px; color: cyan; letter-spacing: 4px; font-weight: bold; }
+        #senderName {
+            font-size: 45px; font-weight: 900; color: #fff;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+            display: block; animation: zoomName 1s infinite alternate;
+        }
+
+        /* MAIN WISHING TEXT */
+        .big-wish {
+            font-size: 58px; font-weight: 900; line-height: 1; margin: 30px 0;
+            background: linear-gradient(to bottom, #fff, #f1c40f, #e67e22);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px red);
+        }
+
+        /* COUNTDOWN UNITS */
+        .timer-flex { display: flex; justify-content: center; gap: 8px; margin: 25px 0; }
+        .unit {
+            background: rgba(0,0,0,0.6); border: 2px solid gold;
+            padding: 10px; border-radius: 12px; min-width: 65px;
+        }
+        .unit span { display: block; font-size: 26px; color: #00ff00; }
+        .unit label { font-size: 10px; color: #fff; }
+
+        /* BSEB PROMO - VANDANA CLASSES */
+        .promo-card {
+            width: 90%; max-width: 420px; margin: 30px auto;
+            background: linear-gradient(135deg, rgba(255,0,0,0.3), rgba(0,0,0,0.8));
+            border: 3px solid #f1c40f; border-radius: 20px; padding: 25px;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.6); animation: floatCard 4s infinite ease-in-out;
+        }
+        .promo-h { color: gold; font-size: 26px; margin-bottom: 5px; }
+        .promo-sub { font-size: 18px; color: #fff; margin-bottom: 10px; }
+        .big-offer {
+            font-size: 50px; font-weight: 900; color: #fff;
+            text-shadow: 0 0 20px #f1c40f; margin: 15px 0;
+            animation: pulseOffer 0.7s infinite alternate;
+        }
+        .wa-btn {
+            background: #25D366; color: white; text-decoration: none;
+            padding: 18px 40px; border-radius: 60px; display: inline-block;
+            font-size: 22px; font-weight: bold; margin-top: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        /* SHARE BAR */
+        .share-fixed {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: #000; padding: 20px 10px; border-top: 3px solid gold;
+            display: none; z-index: 100000;
+        }
+        .name-inp {
+            padding: 15px; width: 60%; border-radius: 8px; border: 2px solid gold;
+            font-size: 16px; background: #111; color: #fff; outline: none;
+        }
+        .btn-wa {
+            background: #007bff; color: #fff; padding: 15px 15px;
+            border-radius: 8px; border: none; font-weight: bold; font-size: 16px;
+        }
+
+        /* --- KEYFRAMES --- */
+        @keyframes bounceGift { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2) rotate(5deg); } }
+        @keyframes spinLogo { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+        @keyframes blinker { 50% { opacity: 0; } }
+        @keyframes pulseOffer { from { transform: scale(1); } to { transform: scale(1.1); } }
+        @keyframes floatCard { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        @keyframes zoomName { from { transform: scale(1); } to { transform: scale(1.05); } }
+
+    </style>
+</head>
+<body>
+
+    <div id="gift-page" onclick="startMagic()">
+        <div class="gift-box-animate">🎁</div>
+        <div class="touch-text">Touch Karein!</div>
+        <p style="color: white; margin-top: 15px;">Bihar Board Special Gift</p>
+    </div>
+
+    <div id="main-page">
+        <canvas id="canvas-bg"></canvas>
+
+        <div class="logo-box">
+            <img src="img.png" alt="Vandana Classes" class="main-logo">
+        </div>
+
+        <div class="from-section">
+            <span class="lbl">HELLO:</span>
+            <div id="Hello">Meri taraf se</div>
+        </div>
+
+        <h1 class="big-wish">HAPPY<br>NEW YEAR<br>2026</h1>
+
+        <div class="timer-flex">
+            <div class="unit"><span id="days">00</span><label>Days</label></div>
+            <div class="unit"><span id="hours">00</span><label>Hrs</label></div>
+            <div class="unit"><span id="mins">00</span><label>Min</label></div>
+            <div class="unit"><span id="secs">00</span><label>Sec</label></div>
+        </div>
+
+        <div class="promo-card">
+            <div class="promo-h">Vandana Classes</div>
+            <div class="promo-sub">Bihar Board 10th & 12th Notes</div>
+            <div style="color: cyan; font-weight: bold;">Mission 2026 (450+ Marks)</div>
+            <div class="big-offer">90% OFF</div>
+            <a href="https://wa.me/919113491633?text=I want Bihar Board 90% OFF Notes" class="wa-btn">
+                Abhi Message Karein
+            </a>
+            <p style="margin-top: 15px; font-size: 14px; color: gold;">Contact: 9113491633</p>
+        </div>
+
+        <p style="padding: 20px; font-size: 14px; line-height: 1.5;">
+            Naya Saal, Nayi Taiyari!<br>Vandana Classes ke saath karein Board Exam fatah.
+        </p>
+    </div>
+
+    <div class="share-fixed" id="shareUI">
+        <input type="text" id="userNameInp" class="name-inp" placeholder="Apna Naam Likhien">
+        <button onclick="share()" class="btn-wa">SHARE 📲</button>
+    </div>
+
+    <audio id="audioPlay" loop>
+        <source src="https://dl.dropboxusercontent.com/s/7777777/HappyNewYearMusic.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Check Sender Name from URL
+        const u = new URLSearchParams(window.location.search);
+        const name = u.get('n');
+        if(name) { document.getElementById('senderName').innerText = decodeURIComponent(name); }
+
+        function startMagic() {
+            document.getElementById('gift-page').style.display = 'none';
+            document.getElementById('main-page').style.display = 'block';
+            document.getElementById('shareUI').style.display = 'block';
+            document.getElementById('audioPlay').play();
+            startFireworks();
+            initCountdown();
+        }
+
+        function initCountdown() {
+            const end = new Date("Jan 1, 2026 00:00:00").getTime();
+            setInterval(() => {
+                const now = new Date().getTime();
+                const d = end - now;
+                document.getElementById("days").innerText = Math.floor(d / (1000 * 60 * 60 * 24));
+                document.getElementById("hours").innerText = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                document.getElementById("mins").innerText = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById("secs").innerText = Math.floor((d % (1000 * 60)) / 1000);
+            }, 1000);
+        }
+
+        function share() {
+            const val = document.getElementById('userNameInp').value;
+            if(!val) { alert("Naam likhna zaroori hai!"); return; }
+            const link = window.location.href.split('?')[0] + "?n=" + encodeURIComponent(val);
+            const txt = encodeURIComponent("*" + val + "* ne aapke liye Bihar Board 2026 ka jaadu bheja hai! 🎁✨\nCheck karein 👇\n" + link);
+            window.location.href = "whatsapp://send?text=" + txt;
+        }
+
+        // --- FIREWORKS SYSTEM ---
+        function startFireworks() {
+            const c = document.getElementById('canvas-bg');
+            const x = c.getContext('2d');
+            c.width = window.innerWidth; c.height = window.innerHeight;
+            let parts = [];
+
+            function bang(ox, oy) {
+                const hue = Math.random() * 360;
+                for(let i=0; i<40; i++) {
+                    parts.push({
+                        ox, oy, 
+                        vx: Math.random() * 6 - 3, 
+                        vy: Math.random() * 6 - 3, 
+                        l: 1, h: hue
+                    });
+                }
+            }
+
+            function draw() {
+                x.fillStyle = 'rgba(0,0,0,0.1)';
+                x.fillRect(0,0,c.width, c.height);
+                parts.forEach((p, i) => {
+                    p.ox += p.vx; p.oy += p.vy; p.l -= 0.015;
+                    x.fillStyle = `hsl(${p.h}, 100%, 50%)`;
+                    x.globalAlpha = p.l;
+                    x.fillRect(p.ox, p.oy, 3, 3);
+                    if(p.l <= 0) parts.splice(i, 1);
+                });
+                if(Math.random() < 0.1) bang(Math.random()*c.width, Math.random()*c.height);
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+    </script>
+</body>
+</html>
